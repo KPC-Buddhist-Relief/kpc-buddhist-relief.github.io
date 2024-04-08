@@ -1,0 +1,26 @@
+body {
+    font-family: "Times New Roman", Times, serif; 
+    background-color: lightblue;
+}
+
+.section {
+    text-align: center; /* Fixed typo */
+    color: darkgreen; 
+    margin: 10px; 
+    padding: 10px; 
+}
+
+
+nav ul {
+    list-style-type: none; 
+    display: flex; 
+    justify-content: center; 
+}
+
+nav ul li {
+    margin: 0 10px; 
+}
+
+nav ul li:hover {
+    background-color: lightgreen; 
+}

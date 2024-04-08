@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contact KPC Buddhist Temple</title>
+    <link rel="stylesheet" href="stylesKPC.css">
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header class="section">
+        <h1>KPC Buddhist Temple</h1>
+    </header>
+
+    <!-- Navigation Menu -->
+    <nav class="section">
+        <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="inventory.html">Inventory Database</a></li>
+            <li><a href="contact.html">Contact Information</a></li> <!-- Added link to "contact.html" -->
+        </ul>
+    </nav>
+
+    <h1>Contact KPC Buddhist Temple</h1>
+    <p>Feel free to contact us with any questions or comments using the form below:</p>
+    
+    <form id="contactForm" method="POST">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br><br>
+        
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br><br>
+        
+        <label for="message">Message:</label><br>
+        <textarea id="message" name="message" rows="4" cols="50" required></textarea><br><br>
+        
+        <input type="submit" value="Submit">
+    </form>
+
+    <div id="confirmationMessage" style="display: none;">
+        Thank you for your message!
+    </div>
+
+    <script>
+        document.getElementById("contactForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent default form submission
+
+            var formData = new FormData(this);
+
+            // Example: Log form data to console
+            for (var pair of formData.entries()) {
+                console.log(pair[0] + ': ' + pair[1]);
+            }
+
+            // Redirect to confirmation.html
+            window.location.href = "confirmation.html";
+        });
+    </script>
+</body>
+</html>
