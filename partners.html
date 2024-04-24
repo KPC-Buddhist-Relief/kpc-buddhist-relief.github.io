@@ -20,7 +20,66 @@
         </ul>
     </nav>
 
-    <body>
+    <!-- Partners Section -->
+    <section class="section">
         <h1>Partners</h1>
-        <p>Here is where you can see neighboring partners and alliances that KPC works with for their buddhist relief project</p>
-    </html>
+        <p>Here is where you can see neighboring partners and alliances that KPC works with for their Buddhist relief project. This is where they can submit requests for what they need for their organization.</p>
+    </section>
+
+    <!-- Order Form -->
+    <form id="orderForm">
+        <label for="organizationName">Partner/ Organization</label><br>
+        <input type="text" id="organizationName" placeholder="Partner or Organization Name" required><br><br>
+        <label for="itemName">Item Needed</label><br>
+        <input type="text" id="itemName" placeholder="Item Name" required><br><br>
+        <label for="quantity">Quantity of Item Needed</label><br>
+        <input type="number" id="quantity" placeholder="Quantity" required><br><br>
+        <label for="unitsDropdown">Units: *only input units if it applies to the specific item*</label>
+        <select id="unitsDropdown">
+            <option value="">None</option>
+            <option value="oz">oz</option>
+            <option value="lbs">lbs</option>
+        </select>
+        <input type="number" id="unitNumber" placeholder="Number"><br><br>
+        <label for="dateNeeded">Date Organization Needs Item By:</label><br>
+        <input type="date" id="dateNeeded" required><br><br>
+        <input type="submit" value="Submit Order">
+    </form>
+    
+    <!-- Order Dashboard -->
+    <div class="dashboard">
+        <h2>Order Dashboard</h2>
+        <div id="orders"></div>
+    </div>
+    
+    <script>
+        document.getElementById('orderForm').addEventListener('submit', function(e) {
+            e.preventDefault(); // prevent form submission
+    
+            // Collect form data
+            var organizationName = document.getElementById('organizationName').value;
+            var itemName = document.getElementById('itemName').value;
+            var quantity = document.getElementById('quantity').value;
+            var units = document.getElementById('unitsDropdown').value; // Retrieve selected unit from dropdown
+            var unitNumber = document.getElementById('unitNumber').value; // Retrieve numerical value
+            
+            // Create a new order item
+            var orderItem = `
+                <div class="dashboard-item">
+                    <strong>Organization:</strong> ${organizationName}<br>
+                    <strong>Item:</strong> ${itemName}<br>
+                    <strong>Quantity:</strong> ${quantity}<br>
+                    ${units ? `<strong>Units:</strong> ${unitNumber}${units} <br>` : ''} <!-- Conditionally include units -->
+                    <strong>Date Needed:</strong> ${document.getElementById('dateNeeded').value}
+                </div>
+            `;
+    
+            // Append the new order item to the dashboard
+            document.getElementById('orders').insertAdjacentHTML('beforeend', orderItem);
+    
+            // Clear the form fields
+            document.getElementById('orderForm').reset();
+        });
+    </script>
+</body>
+</html>
