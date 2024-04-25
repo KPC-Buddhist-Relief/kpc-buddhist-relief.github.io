@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>About KPC Buddhist Temple</title>
+    <title>KPC Buddhist Temple</title>
     <link rel="stylesheet" href="stylesKPC.css">
 </head>
 <body>
@@ -20,19 +20,86 @@
     </nav>
 
     <!-- Main Content Section -->
-    <section class="main-content">
+    <section class="section">
         <h1>Transactions</h1>
-        <p>Here is where you can see all transactions that KPC has purchased for their community's needs. These transactions consist of recent purchases for their donation drives.</p>
+        <p>Here is where you can see transactions KPC needs to make for the organization</p>
     </section>
 
     <!-- Side Section for Inputting New Transactions -->
     <aside class="transaction-input">
         <h2>Add New Transaction</h2>
-        <form>
-            <label for="transaction">Transaction Description:</label><br>
-            <input type="text" id="transaction" name="transaction"><br>
+        <form id="transaction-form">
+            <label for="item-name">Item Name:</label><br>
+            <input type="text" id="item-name" name="item-name"><br>
+            <label for="item-category">Item Category:</label><br>
+            <input type="text" id="item-category" name="item-category"><br>
+            <label for="quantity">Quantity:</label><br>
+            <input type="number" id="quantity" name="quantity" min="0"><br>
+            
+            <label for="unit">Unit:</label><br>
+            <select id="unit" name="unit">
+                <option value="none">None</option>
+                <option value="oz">Ounces (oz)</option>
+                <option value="lbs">Pounds (lbs)</option>
+            </select>
+            <input type="number" id="unitNumber" ><br><br> <!-- Numeric input added -->
+            <label for="price-per-unit">Price per Unit:</label><br>
+            <input type="number" id="price-per-unit" name="price-per-unit" min="0" step="0.01"><br>
+            <label for="total-price">Total Price:</label><br>
+            <input type="number" id="total-price" name="total-price" min="0" step="0.01"><br>
+            <label for="store">Store:</label><br>
+            <input type="text" id="store" name="store"><br>
+            <label for="store-location">Store Location:</label><br>
+            <input type="text" id="store-location" name="store-location"><br>
+            <label for="purchase-date">Purchase Date:</label><br>
+            <input type="date" id="purchase-date" name="purchase-date"><br><br>
             <input type="submit" value="Submit">
         </form>
     </aside>
+
+    <!-- Order Dashboard -->
+    <div class="dashboard">
+        <h2>Order Dashboard</h2>
+        <div id="orders"></div>
+    </div>
+    
+    <script>
+        document.getElementById('transaction-form').addEventListener('submit', function(e) {
+            e.preventDefault(); // prevent form submission
+    
+            // Collect form data
+            var itemName = document.getElementById('item-name').value;
+            var itemCategory = document.getElementById('item-category').value;
+            var quantity = document.getElementById('quantity').value;
+            var unit = document.getElementById('unit').value;
+            var unitNumber = document.getElementById('unitNumber').value; // Numeric value for unit
+            var pricePerUnit = document.getElementById('price-per-unit').value;
+            var totalPrice = document.getElementById('total-price').value;
+            var store = document.getElementById('store').value;
+            var storeLocation = document.getElementById('store-location').value;
+            var purchaseDate = document.getElementById('purchase-date').value;
+
+            // Create a new order item
+            var orderItem = `
+                <div class="dashboard-item">
+                    <h2>${itemName}</h2>
+                    <p><strong>Item Category:</strong> ${itemCategory}</p>
+                    <p><strong>Quantity:</strong> ${quantity}</p>
+                    <p><strong>Unit:</strong> ${unit} (${unitNumber})</p>
+                    <p><strong>Price per Unit:</strong> ${pricePerUnit}</p>
+                    <p><strong>Total Price:</strong> ${totalPrice}</p>
+                    <p><strong>Store:</strong> ${store}</p>
+                    <p><strong>Store Location:</strong> ${storeLocation}</p>
+                    <p><strong>Purchase Date:</strong> ${purchaseDate}</p>
+                </div>
+            `;
+
+            // Append the new order item to the dashboard
+            document.getElementById('orders').insertAdjacentHTML('beforeend', orderItem);
+
+            // Clear the form fields
+            document.getElementById('transaction-form').reset();
+        });
+    </script>
 </body>
 </html>

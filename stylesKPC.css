@@ -23,28 +23,37 @@ nav ul li {
 nav ul li:hover {
     background-color: lightgreen; 
 }
+
 .dashboard {
     display: flex;
-    justify-content: space-around;
+    justify-content: center; /* Removed stray forward slash */
     align-items: center;
+    flex-wrap: wrap; 
     margin-top: 50px;
 }
 
 .dashboard-item {
-    width: 200px;
-    height: 200px;
+    width: 250px;
+    
     background-color: #f0f0f0;
     border: 1px solid #ccc;
     text-align: center;
     padding: 20px;
+    overflow: hidden;
+    margin: 10px; 
+    box-sizing: border-box; 
 }
 
 .dashboard-item h2 {
     margin-bottom: 10px;
+    font-size: 18px;
 }
 
 .dashboard-item p {
-    margin-bottom: 20px;
+    margin-bottom: 5px;
+    font-size: 14px; 
+    max-height: 200px; 
+    overflow: hidden;
 }
 
 .dashboard-item a {
@@ -68,6 +77,3 @@ input[type="text"], input[type="number"], input[type="date"], input[type="submit
     box-sizing: border-box;
 }
 
-.transaction-input h2 {
-    font-size: 17px; 
-}
