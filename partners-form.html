@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KPC Buddhist Temple</title>
+    <link rel="stylesheet" href="partner-form.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/js/standalone/selectize.min.js" integrity="sha256-+C0A5Ilqmu4QcSPxrlGpaZxJ04VjsRjKu+G82kl5UJk=" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/css/selectize.bootstrap3.min.css" integrity="sha256-ze/OEYGcFbPRmvCnrSeKbRTtjG4vGLHXgOqsyLFTRjg=" crossorigin="anonymous" />
+</head>
+
+<body>
+    <div class="wrapper">
+    <!-- Header Section -->
+    <header class="section">
+        <h1>KPC Buddhist Temple</h1>
+    </header>
+
+    <!-- Navigation Menu -->
+    <nav class="section">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="transactions.html">Transactions</a></li>
+            <li><a href="contact.html">Contact Information</a></li> <!-- Added link to "contact.html" -->
+        </ul>
+    </nav>
+
+    <!-- Partners Section -->
+    <section class="section">
+        <h1>Partners</h1>
+        <p>This is where  organizaiton requests can be made for what is needed for their organization.</p>
+    </section>
+
+<div class="container">
+    <!-- Order Form -->
+    <form id="orderForm">
+        <h2>Add a partner request</h2>
+        <label for="organizationName">Partner/ Organization</label><br>
+        <select id="organizationName" required>
+            <option value="">Select or Enter a Partner</option>
+        </select><br>
+        
+        <label for="itemName">Item Needed</label><br>
+        <input type="text" id="itemName" placeholder="Item Name" required><br><br>
+        <label for="quantity">Quantity of Item Needed</label><br>
+        <input type="number" id="quantity" placeholder="Quantity" required><br><br>
+        <label for="unitsDropdown">Units: *only input units if it applies to the specific item*</label><br><br>
+        <select id="unitsDropdown">
+            <option value="">None</option>
+            <option value="oz">oz</option>
+            <option value="lbs">lbs</option>
+            <option value="kg">kg</option>
+            <option value="g">g</option>
+        </select>
+        <input type="number" id="unitNumber" placeholder="Number"><br><br>
+        <label for="dateNeeded">Date Organization Needs Item By:</label><br>
+        <input type="date" id="dateNeeded" required><br><br>
+        <input type="submit" id="add-to-cart"value="Add to cart">
+    </form>
+
+    <!-- <div id="organizationSuggestions"></div> -->
+    
+    <!-- Order Dashboard -->
+    <div class="dashboard">
+        <h2>Order Cart</h2>
+        <div id="orders"></div>
+        <button id="submit-button">Sumbit Order</button>
+    </div>
+</div>
+    
+</div>
+<script src="./partners-form.js" type="module"></script>
+</body>
+</html>

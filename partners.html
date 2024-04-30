@@ -1,85 +1,53 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KPC Buddhist Temple</title>
-    <link rel="stylesheet" href="stylesKPC.css">
+    <link rel="stylesheet" href="partner.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/js/standalone/selectize.min.js" integrity="sha256-+C0A5Ilqmu4QcSPxrlGpaZxJ04VjsRjKu+G82kl5UJk=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/css/selectize.bootstrap3.min.css" integrity="sha256-ze/OEYGcFbPRmvCnrSeKbRTtjG4vGLHXgOqsyLFTRjg=" crossorigin="anonymous" />
 </head>
 
-<body>
-    <!-- Header Section -->
-    <header class="section">
-        <h1>KPC Buddhist Temple</h1>
-    </header>
+    <body>
+        <div class="wrapper">
+            <header class="section">
+                <h1>KPC Buddhist Temple</h1>
+            </header>
+        
+            <!-- Navigation Menu -->
+            <nav class="section">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="transactions.html">Transactions</a></li>
+                    <li><a href="contact.html">Contact Information</a></li> <!-- Added link to "contact.html" -->
+                </ul>
+            </nav>
 
-    <!-- Navigation Menu -->
-    <nav class="section">
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="partners.html">Partners</a></li>
-            <li><a href="contact.html">Contact Information</a></li> <!-- Added link to "contact.html" -->
-        </ul>
-    </nav>
+            <section class="section">
+                <h1>Partners</h1>
+                <p>Here is where you can see neighboring partners and alliances that KPC works with for their Buddhist relief project.</p>
+            </section>
+         
+            <div class="button-container">
+            <!-- Partners Section -->
+            <a href="partners-form.html" class="custom-button">Add New Request</a>
+                <!-- <button class="custom-button" id="addButton">Add New Request</button> -->
+            </div>
 
-    <!-- Partners Section -->
-    <section class="section">
-        <h1>Partners</h1>
-        <p>Here is where you can see neighboring partners and alliances that KPC works with for their Buddhist relief project. This is where they can submit requests for what they need for their organization.</p>
-    </section>
+            <div class="partner-section" id="partnerSection">
+                <!-- partner card is here -->
+            </div>
 
-    <!-- Order Form -->
-    <form id="orderForm">
-        <label for="organizationName">Partner/ Organization</label><br>
-        <input type="text" id="organizationName" placeholder="Partner or Organization Name" required><br><br>
-        <label for="itemName">Item Needed</label><br>
-        <input type="text" id="itemName" placeholder="Item Name" required><br><br>
-        <label for="quantity">Quantity of Item Needed</label><br>
-        <input type="number" id="quantity" placeholder="Quantity" required><br><br>
-        <label for="unitsDropdown">Units: *only input units if it applies to the specific item*</label>
-        <select id="unitsDropdown">
-            <option value="">None</option>
-            <option value="oz">oz</option>
-            <option value="lbs">lbs</option>
-        </select>
-        <input type="number" id="unitNumber" placeholder="Number"><br><br>
-        <label for="dateNeeded">Date Organization Needs Item By:</label><br>
-        <input type="date" id="dateNeeded" required><br><br>
-        <input type="submit" value="Submit Order">
-    </form>
-    
-    <!-- Order Dashboard -->
-    <div class="dashboard">
-        <h2>Order Dashboard</h2>
-        <div id="orders"></div>
-    </div>
-    
-    <script>
-        document.getElementById('orderForm').addEventListener('submit', function(e) {
-            e.preventDefault(); // prevent form submission
-    
-            // Collect form data
-            var organizationName = document.getElementById('organizationName').value;
-            var itemName = document.getElementById('itemName').value;
-            var quantity = document.getElementById('quantity').value;
-            var units = document.getElementById('unitsDropdown').value; // Retrieve selected unit from dropdown
-            var unitNumber = document.getElementById('unitNumber').value; // Retrieve numerical value
-            
-            // Create a new order item
-            var orderItem = `
-                <div class="dashboard-item">
-                    <strong>Organization:</strong> ${organizationName}<br>
-                    <strong>Item:</strong> ${itemName}<br>
-                    <strong>Quantity:</strong> ${quantity}<br>
-                    ${units ? `<strong>Units:</strong> ${unitNumber}${units} <br>` : ''} <!-- Conditionally include units -->
-                    <strong>Date Needed:</strong> ${document.getElementById('dateNeeded').value}
-                </div>
-            `;
-    
-            // Append the new order item to the dashboard
-            document.getElementById('orders').insertAdjacentHTML('beforeend', orderItem);
-    
-            // Clear the form fields
-            document.getElementById('orderForm').reset();
-        });
-    </script>
-</body>
+            <div class="graphs">
+                <canvas class="chartBox" id="myChart" height="400" width="600"></canvas>
+                <canvas class="chartBox" id="myChartTwo" height="400" width="600"></canvas>
+            </div>
+            <!-- wrapper div below-->
+        </div> 
+        <script src="./partner.js" type="module"></script>
+    </body>
 </html>

@@ -1,0 +1,152 @@
+
+
+
+body {
+    font-family: "Times New Roman", Times, serif; 
+    background-color: lightgreen;
+}
+
+nav ul {
+    list-style-type: none; 
+    display: flex; 
+    justify-content: center; 
+}
+
+nav ul li {
+    margin: 0 10px; 
+}
+
+nav ul li:hover {
+    background-color: lightgreen; 
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row-reverse;
+}
+
+/* .section {
+    flex: 1; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: darkgreen; 
+} */
+
+.section a:hover {
+    background-color: rgb(244, 240, 240);
+}
+
+.section {
+    text-align: center; 
+    color: darkgreen; 
+    margin: 10px; 
+    padding: 10px; 
+}
+
+.custom-button {
+    width: 10%;
+    padding: 10px;
+    box-sizing: border-box;
+    background-color: rgb(255, 255, 255);
+    border: 0px;
+    border-radius: 7px;
+    color: black;
+    border-color: black;
+    margin-right: 70px;
+    text-decoration: none; 
+}
+
+.custom-button:hover {
+    width: 10%;
+    padding: 10px;
+    box-sizing: border-box;
+    background-color: rgb(244, 240, 240);
+    border: 0px;
+    border-radius: 7px;
+    color: black;
+    border-color: black
+}
+
+
+.section a {
+    margin-bottom: 10px;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    background-color: rgb(255, 255, 255);
+    border: 0px;
+    border-radius: 7px;
+    color: black;
+    border-color: black;
+    text-decoration: none; 
+}
+
+
+
+.partner-section {
+    color: darkgreen; 
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+.partner-item {
+    
+    
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    text-align: center;
+    padding: 20px;
+    overflow: hidden;
+    margin: 10px; 
+    box-sizing: border-box; 
+    /* width: calc(33.33% - 20px);  */
+    margin-bottom: 20px; /* Add spacing between rows */
+    
+}
+
+
+.partner-item h2 {
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.partner-item p {
+    margin-bottom: 5px;
+    font-size: 14px; 
+    max-height: 200px; 
+    overflow: hidden;
+}
+
+.partner-item a {
+    display: inline-block;
+    padding: 8px 20px;
+    background-color: #4CAF50;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.partner-item a:hover {
+    background-color: #45a049;
+}
+
+.graphs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; 
+  }
+  
+  .chartBox {
+    background-color: rgb(1, 1, 1, 0.1);
+    border-radius: 10px;
+    width: calc(50% - 10px); /* 50% width minus margin */
+    height: fit-content;
+    padding: 1.5rem;
+    margin: 25px; /* Add margin to all sides */
+  }

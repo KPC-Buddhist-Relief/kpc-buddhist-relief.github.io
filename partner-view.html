@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KPC Buddhist Temple</title>
+    <link rel="stylesheet" href="partner-view.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/js/standalone/selectize.min.js" integrity="sha256-+C0A5Ilqmu4QcSPxrlGpaZxJ04VjsRjKu+G82kl5UJk=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/css/selectize.bootstrap3.min.css" integrity="sha256-ze/OEYGcFbPRmvCnrSeKbRTtjG4vGLHXgOqsyLFTRjg=" crossorigin="anonymous" />
+</head>
+
+<body>
+    <div class="wrapper">
+        
+        <header class="section">
+            <h1>KPC Buddhist Temple</h1>
+        </header>
+    
+        <!-- Navigation Menu -->
+        <nav class="section">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="transactions.html">Transactions</a></li>
+                <li><a href="contact.html">Contact Information</a></li> <!-- Added link to "contact.html" -->
+            </ul>
+        </nav>
+
+        <section class="section">
+            <h1 id="partnerTitle">Partner Name </h1>
+            <p id="partnerSubText">Here is where you can see needs for partner and visualizations</p>
+        </section>
+        <div class="container">
+            <div class="needSide">
+                <h1 id="partnerNeeds">Partner Needs </h1>
+                <p>See the 10 latest partner needs</p>
+                <div class="needsBoxText">
+                    <p id="needsSubText"> </p>
+                </div>
+                
+            </div>
+            <div class="trendSide">
+                <h1 id="partnerTrends">Partner Trends </h1>
+                <div class="graphs">
+                    <canvas class="chartBox" id="myChart" height="400" width="600"></canvas>
+                </div>
+            </div>
+            
+        </div>
+
+    </div>
+    <script src="./partner-view.js" type="module"></script>
+</body>
+</html>
